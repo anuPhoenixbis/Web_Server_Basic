@@ -1,0 +1,50 @@
+{{!-- hbs file is a regular html file with some extra cool features --}}
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div>
+            
+            {{>headers}}
+            <h2>This page is being rendered from an HBS file in an express route from the views folder</h2>
+            {{!-- we can render the passed values using the double camel case syntax ,i.e., doubles curlies --}}
+            <br/>
+            <h3>These objects we passed to this hbs file : {{title}} and {{body}}</h3>
+            <br/>
+            <form>
+                <input placeholder="Location"></input>
+                <button>Search</button>
+                
+            </form>
+
+            <br>
+            <p id="error_msg"></p> {{!--This para will show the error msg--}}
+            <br>
+            <p id="weather_msg"></p> {{!--This para will show the weather msg if the weather is there to be rendered--}}
+            <br>
+            <p id="desc_msg"></p> {{!--description--}}
+        </div>
+        {{>footer}}
+        
+        <!--Placing our script here so that it runs after rendering the complete html hence, it will have the complete 
+        access of the html to manipulate the form-->
+        <script src="./js/app.js" async defer></script>
+    </body>
+</html>
+
+<!-- to dynamically render some content we will use handle bars, they are use to render save content 
+across multiple endpoints like a common navbar across multiple endpoints otherwise we would have to render the same
+navbar across multiple pages by injecting the exact code across the other html files -->
