@@ -31,6 +31,8 @@ const publicDirname = path.join(__dirname,'../public')//holds the public folder 
 
 const app = express();
 
+//heroku connection
+const port = process.env.PORT || 3001
 
 //Don't take much tension about handlebars using React is much simpler and will easily resolve the 
 // dynamic issue
@@ -191,6 +193,6 @@ app.get('/{*splat}',(req,res)=>{ //the "/{*splat}" will catch all the endpoints 
 })
 
 
-app.listen(3001 , () => {
+app.listen(port , () => {
     console.log("The server is running") //the message is displayed server is running on the provided port
 }); //to start the server

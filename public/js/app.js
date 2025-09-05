@@ -8,7 +8,7 @@
 //the second .then() is the one when response is received and parsed to json and now can be accessed
 
 const dynamicWeather = (address, errorMsg , responseMsg,description) => {
-    const weatherUrl = `http://localhost:3001/weather?address=${address}`;
+    const weatherUrl = `/weather?address=${address}`;
 
 
 fetch(weatherUrl)
